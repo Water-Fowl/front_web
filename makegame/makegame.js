@@ -130,8 +130,8 @@
                     technic: Number($('#action').val()), 
                     position: Number(loc.id), 
                     time: abs_time.toISOString(), 
-                    attacker: 'player1', 
-                    breaked: 'player2', 
+                    attacker: $('#attacker').val(), 
+                    breaked: $('#breaked').val(), 
                 });
             });
         });
@@ -222,7 +222,7 @@
             if ($('#right_0').val() != '') pair_right.push($('#right_0').val());
             if ($('#right_1').val() != '') pair_right.push($('#right_1').val());            
 
-            alert(JSON.stringify({
+            var score = {
                 //game_id: '0', 
                 //created_by: 'test', 
                 team_id: $('#teamid').val(), 
@@ -243,5 +243,12 @@
                     attacker: attacker, 
                     breaked: breaked, 
                 }, 
-            })); 
+            };
+            $.post(api_server + '/v1/game/', JSON.stringify({
+                username: 'hata', 
+                apikey: '2e24be993e86887273d4270e60cc72b068a6ab2883f149404844089eadb1c832', 
+                score: score, 
+            }), function(res){
+                alert(res.message);
+            }); 
         });

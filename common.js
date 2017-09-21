@@ -1,4 +1,5 @@
             var login_server = 'http://login.water-fowl.co.jp';
+            var api_server = 'http://api.water-fowl.co.jp';
 
             var Restform = function(form, method, url, inputs, actions){
                 $(form).submit(function(){
@@ -15,9 +16,8 @@
                                 if (res.status == action.status) action.func(res);
                             });
                         }, 
-                        dataType: this.res_type, 
+                        dataType: 'json', 
                     });
                     return false;
                 });
             };
-            Restform.res_type = 'json';
