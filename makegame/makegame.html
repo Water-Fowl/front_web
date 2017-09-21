@@ -3,27 +3,63 @@
         <link rel="stylesheet" type="text/css" media="screen" href="jquery-ui.min.css">
         <link rel="stylesheet" type="text/css" media="screen" href="ui.jqgrid.css">
 
-        <script type="text/javascript" src="jquery-3.2.1.min.js"></script>
+        <script type="text/javascript" src="../jquery-3.2.1.min.js"></script>
         <script type="text/javascript" src="jquery-ui.min.js"></script>
         <script type="text/javascript" src="grid.locale-ja.js"></script>
         <script type="text/javascript" src="jquery.jqGrid.js"></script>
+        <script type="text/javascript" src="../common.js"></script>
     </head>
     <body>
-        <form id="append">
-        開始時間<input id="start_date" type="datetime-local" value="1970-01-01T00:00"><br>
-        <br>
-        時間<input id="date" type="time" step="1" value="00:00:00"><br>
-        技<select id="action"></select><br>
-        <!--位置: <span id="loc_view"></span>-->
-        <div id="location" style="width: 380px; height: 200px; position: relative; border: 1px solid lightgray; ">
-            <!--<img src="location.png" src="落下点コード" width="480px">-->
+        <div style="float: left; ">
+            チーム情報
+            <div style="border: 1px solid lightgray; ">
+                <form id="setteam">
+                    チームID<input id="teamid" type="text">
+                    <input type="submit" value="更新">
+                </form>
+                <form id="append">
+                <div id="playable"></div>
+                <div style="float: left; ">
+                    左チーム<br>
+                    <input id="left_0" type="text"><br>
+                    <input id="left_1" type="text"><br>
+                </div>
+                <div>
+                    右チーム<br>
+                    <input id="right_0" type="text"><br>
+                    <input id="right_1" type="text"><br>
+                </div>
+            </div>
+            <br>
+            ゲーム条件
+            <div style="border: 1px solid lightgray; ">
+                開始時間<input id="start_date" type="datetime-local" value="1970-01-01T00:00"><br>
+                最初にサーブした人<input id="first_service" type="text"><br>
+                最初にレシーブした人<input id="first_receive" type="text"><br>
+                マッチポイント<input id="match_point" type="number"><br>
+                <input id="deuce" type="checkbox" >デュース<br>
+            </div>
+            <br>
+            スコア
+            <div style="border: 1px solid lightgray; ">
+                時間<input id="date" type="time" step="1" value="00:00:00">
+                <input id="time_play" type="button" value="▶">
+                <input id="time_stop" type="button" value="■"><br>
+                技<select id="action"></select><br>
+                <!--位置: <span id="loc_view"></span>-->
+                <div id="location" style="width: 380px; height: 200px; position: relative; border: 1px solid lightgray; ">
+                    <!--<img src="location.png" src="落下点コード" width="480px">-->
+                </div>
+                <!--<input type="submit">-->
+                </form>
+            </div>
         </div>
-        <!--<input type="submit">-->
-        </form>
-        <table id="sample1"></table>
-        <div id = "pager1"></div>
-        <input id="del" type="button" value="削除">
-        <input id="submit" type="button" value="json出力">
+        <div style="float: left; margin-left: 4em; ">
+            <table id="sample1"></table>
+            <div id = "pager1"></div>
+            <input id="del" type="button" value="削除">
+            <input id="submit" type="button" value="json出力">
+        </div>
 
         <script type="text/javascript" src="makegame.js"></script>
     </body>

@@ -50,24 +50,52 @@
             {id: 13, x: 30 + loc_left + loc_center, y: 150 + loc_top, width: 110, height: 20, color: 'red'}, 
         ];
 
-        setInterval(function(){
-            var datestr = $('#date').val().split(':');
-            var hour, min, sec; 
-            if (datestr.length == 3){
-                hour = Number(datestr[0]);
-                min = Number(datestr[1]);
-                sec = Number(datestr[2]);
-            }else if (datestr.length == 2){
-                hour = Number(datestr[0]);
-                min = Number(datestr[1]);
-                sec = 0;
-            }
+        $('#setteam').submit(function(){
+            $.post(api_server + '/v1/team/info', {username: 'hata', apikey: '2e24be993e86887273d4270e60cc72b068a6ab2883f149404844089eadb1c832', teamid: $('#teamid').val()}, function(res){
+                if (res.status == 0){
+                    var playable = 'プレイ可能: ';
 
-            var time = (hour*60 + min)*60 + sec;
-            time++;
-            datestr = ( '00' + Math.floor(time/3600)%24 ).slice( -2 ) + ':' + ( '00' + Math.floor(time/60)%60 ).slice( -2 ) + ':' + ( '00' + time%60 ).slice( -2 );
-            $('#date').val(datestr);
+                    res.owners.forEach(function(owner){
+                        playable += owner + ' ';
+                    });
+                    res.members.forEach(function(member){
+                        playable += member + ' ';
+                    });
+
+                    $('#playable').html(playable);
+                }/*else if (res.status == 0){
+                }*/
+            });
+            return false;
+        });
+
+        var time_auto = false;
+        setInterval(function(){
+            if (time_auto){
+                var datestr = $('#date').val().split(':');
+                var hour, min, sec; 
+                if (datestr.length == 3){
+                    hour = Number(datestr[0]);
+                    min = Number(datestr[1]);
+                    sec = Number(datestr[2]);
+                }else if (datestr.length == 2){
+                    hour = Number(datestr[0]);
+                    min = Number(datestr[1]);
+                    sec = 0;
+                }
+
+                var time = (hour*60 + min)*60 + sec;
+                time++;
+                datestr = ( '00' + Math.floor(time/3600)%24 ).slice( -2 ) + ':' + ( '00' + Math.floor(time/60)%60 ).slice( -2 ) + ':' + ( '00' + time%60 ).slice( -2 );
+                $('#date').val(datestr);
+            }
         }, 1000);
+        $('#time_play').click(function(){
+            time_auto = true;
+        });
+        $('#time_stop').click(function(){
+            time_auto = false;
+        });
 
         actionList.forEach(function(action){
             $('#action').append('<option value="' + action.id + '">' + action.name + '</option>');
@@ -130,7 +158,7 @@
             colModel : colModelSettings,   //列ごとの設定
             //rowNum : 5,                   //一ページに表示する行数
             caption : "スコア",    //ヘッダーのキャプション
-            height : 200,                  //高さ
+            height : '480',                  //高さ
             pager : 'pager1',              //footerのページャー要素のid
             shrinkToFit : true,　　        //画面サイズに依存せず固定の大きさを表示する設定
             viewrecords: true,               //footerの右下に表示する。
@@ -165,6 +193,7 @@
             var breaked = [];
             var arrows = $('#sample1').jqGrid('getDataIDs');
 
+            var point_left = point_right = 0;
             var start_time = new Date($('#start_date').val());
             var end_time = start_time;
             arrows.forEach(function(id){
@@ -175,23 +204,38 @@
                 time.push(row.time);
                 attacker.push(row.attacker);
                 breaked.push(row.breaked);
+
+                if (row.position <= 13){
+                    point_right++;
+                }else{
+                    point_left++;
+                }
+
                 end_time = row.time;
             });
 
+            var pair_left = [];
+            if ($('#left_0').val() != '') pair_left.push($('#left_0').val());
+            if ($('#left_1').val() != '') pair_left.push($('#left_1').val());
+
+            var pair_right = [];
+            if ($('#right_0').val() != '') pair_right.push($('#right_0').val());
+            if ($('#right_1').val() != '') pair_right.push($('#right_1').val());            
+
             alert(JSON.stringify({
-                game_id: '0', 
-                created_by: 'test', 
-                team_id: '0', 
+                //game_id: '0', 
+                //created_by: 'test', 
+                team_id: $('#teamid').val(), 
                 start_time: start_time, 
                 end_time: end_time, 
-                pair_left: [], 
-                pair_right: [], 
-                first_service: '', 
-                first_receive: '', 
-                point_left: 0, 
-                point_right: 0, 
-                match_point: 10, 
-                deuce: true, 
+                pair_left: pair_left, 
+                pair_right: pair_right, 
+                first_service: $('#first_service').val(), 
+                first_receive: $('#first_receive').val(), 
+                point_left: point_left, 
+                point_right: point_right, 
+                match_point: $('#match_point').val(), 
+                deuce: Boolean($("#deuce:checked").val()), 
                 score: {
                     technic: technic, 
                     position: position, 
