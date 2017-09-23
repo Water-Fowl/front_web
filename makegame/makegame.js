@@ -222,7 +222,7 @@
             if ($('#right_0').val() != '') pair_right.push($('#right_0').val());
             if ($('#right_1').val() != '') pair_right.push($('#right_1').val());            
 
-            var score = {
+            var score = JSON.stringify({
                 //game_id: '0', 
                 //created_by: 'test', 
                 team_id: $('#teamid').val(), 
@@ -242,13 +242,14 @@
                     time: time, 
                     attacker: attacker, 
                     breaked: breaked, 
-                }, 
-            };
-            $.post(api_server + '/v1/game/', JSON.stringify({
+                  }, 
+            });
+            $.post(api_server + '/v1/game/', {
                 username: 'hata', 
                 apikey: '2e24be993e86887273d4270e60cc72b068a6ab2883f149404844089eadb1c832', 
                 score: score, 
-            }), function(res){
-                alert(res.message);
+            }, function(res){
+                alert(res.message  + ' gameid: ' + res.gameid);
+                console.log(res);
             }); 
         });
