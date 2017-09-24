@@ -182,7 +182,7 @@
                 }
         });
 
-        $('#submit').click(function(){
+        var genRequest = function(){
             $('#sample1').jqGrid('setGridParam', {sortorder: 'desc'});
             $('#sample1').jqGrid('sortGrid', 'time');
 
@@ -222,33 +222,41 @@
             if ($('#right_0').val() != '') pair_right.push($('#right_0').val());
             if ($('#right_1').val() != '') pair_right.push($('#right_1').val());            
 
-            var score = JSON.stringify({
-                //game_id: '0', 
-                //created_by: 'test', 
-                team_id: $('#teamid').val(), 
-                start_time: start_time, 
-                end_time: end_time, 
-                pair_left: pair_left, 
-                pair_right: pair_right, 
-                first_service: $('#first_service').val(), 
-                first_receive: $('#first_receive').val(), 
-                point_left: point_left, 
-                point_right: point_right, 
-                match_point: $('#match_point').val(), 
-                deuce: Boolean($("#deuce:checked").val()), 
-                score: {
-                    technic: technic, 
-                    position: position, 
-                    time: time, 
-                    attacker: attacker, 
-                    breaked: breaked, 
-                  }, 
-            });
-            $.post(api_server + '/v1/game/', {
+            return {
                 username: 'hata', 
                 apikey: '2e24be993e86887273d4270e60cc72b068a6ab2883f149404844089eadb1c832', 
-                score: score, 
-            }, function(res){
+                score: JSON.stringify({
+                    //game_id: '0', 
+                    //created_by: 'test', 
+                    team_id: $('#teamid').val(), 
+                    start_time: start_time, 
+                    end_time: end_time, 
+                    pair_left: pair_left, 
+                    pair_right: pair_right, 
+                    first_service: $('#first_service').val(), 
+                    first_receive: $('#first_receive').val(), 
+                    point_left: point_left, 
+                    point_right: point_right, 
+                    match_point: $('#match_point').val(), 
+                    deuce: Boolean($("#deuce:checked").val()), 
+                    score: {
+                        technic: technic, 
+                        position: position, 
+                        time: time, 
+                        attacker: attacker, 
+                        breaked: breaked, 
+                    }, 
+                }), 
+            };
+        };
+
+        $('#fileout').click(function(){
+            $('#fileout').attr('href', 'data:application/octet-stream,' + encodeURIComponent(JSON.stringify(genRequest())));
+        });
+
+        $('#submit').click(function(){
+            
+            $.post(api_server + '/v1/game/', genRequest(), function(res){
                 alert(res.message  + ' gameid: ' + res.gameid);
                 console.log(res);
             }); 
