@@ -19,50 +19,59 @@
         ];
         //var loc_top = 90;
         //var loc_left = 70;
-        var loc_top = 10;
-        var loc_left = 10;
-        var loc_center = 180;
+
+        var center_height = 268;
         var locList = [
-            {id: 1, x: 30 + loc_left, y: 20 + loc_top, width: 30, height: 60, color: 'blue'}, 
-            {id: 2, x: 60 + loc_left, y: 20 + loc_top, width: 50, height: 20, color: 'blue'}, 
-            {id: 3, x: 110 + loc_left, y: 20 + loc_top, width: 30, height: 60, color: 'blue'}, 
-            {id: 5, x: 70 + loc_left, y: 70 + loc_top, width: 30, height: 20, color: 'blue'}, 
-            {id: 7, x: 30 + loc_left, y: 80 + loc_top, width: 30, height: 60, color: 'blue'}, 
-            {id: 8, x: 60 + loc_left, y: 120 + loc_top, width: 50, height: 20, color: 'blue'}, 
-            {id: 9, x: 110 + loc_left, y: 80 + loc_top, width: 30, height: 60, color: 'blue'}, 
+            {id: 1, x: 167, y: 118, width: 90, height: 32, color: 'blue'}, 
+            {id: 2, x: 229, y: 175, width: 30, height: 78, color: 'blue'}, 
+            {id: 3, x: 169, y: 272, width: 91, height: 41, color: 'blue'}, 
+            {id: 5, x: 136, y: 192, width: 45, height: 53, color: 'blue'}, 
+            {id: 7, x: 61, y: 118, width: 90, height: 32, color: 'blue'}, 
+            {id: 8, x: 59, y: 175, width: 32, height: 81, color: 'blue'}, 
+            {id: 9, x: 60, y: 277, width: 92, height: 33, color: 'blue'}, 
 
-            {id: 14, x: 30 + loc_left + loc_center, y: 20 + loc_top, width: 30, height: 60, color: 'blue'}, 
-            {id: 15, x: 60 + loc_left + loc_center, y: 20 + loc_top, width: 50, height: 20, color: 'blue'}, 
-            {id: 16, x: 110 + loc_left + loc_center, y: 20 + loc_top, width: 30, height: 60, color: 'blue'}, 
-            {id: 18, x: 70 + loc_left + loc_center, y: 70 + loc_top, width: 30, height: 20, color: 'blue'}, 
-            {id: 20, x: 30 + loc_left + loc_center, y: 80 + loc_top, width: 30, height: 60, color: 'blue'}, 
-            {id: 21, x: 60 + loc_left + loc_center, y: 120 + loc_top, width: 50, height: 20, color: 'blue'}, 
-            {id: 22, x: 110 + loc_left + loc_center, y: 80 + loc_top, width: 30, height: 60, color: 'blue'}, 
+            {id: 14, x: 167, y: 118 + center_height, width: 90, height: 32, color: 'blue'}, 
+            {id: 15, x: 229, y: 175 + center_height, width: 30, height: 78, color: 'blue'}, 
+            {id: 16, x: 169, y: 272 + center_height, width: 91, height: 41, color: 'blue'}, 
+            {id: 18, x: 136, y: 192 + center_height, width: 45, height: 53, color: 'blue'}, 
+            {id: 20, x: 61, y: 118 + center_height, width: 90, height: 32, color: 'blue'}, 
+            {id: 21, x: 59, y: 175 + center_height, width: 32, height: 81, color: 'blue'}, 
+            {id: 22, x: 60, y: 277 + center_height, width: 92, height: 33, color: 'blue'}, 
 
-            {id: 23, x: 20 + loc_left, y: -10 + loc_top, width: 110, height: 20, color: 'red'}, 
-            {id: 24, x: -10 + loc_left, y: 20 + loc_top, width: 30, height: 60, color: 'red'}, 
-            {id: 25, x: -10 + loc_left, y: 80 + loc_top, width: 30, height: 60, color: 'red'}, 
-            {id: 26, x: 20 + loc_left, y: 150 + loc_top, width: 110, height: 20, color: 'red'}, 
+            {id: 23, x: 278, y: 89, width: 32, height: 205, color: 'red'}, 
+            {id: 24, x: 162, y: 66, width: 110, height: 20, color: 'red'}, 
+            {id: 25, x: 47, y: 66, width: 110, height: 20, color: 'red'}, 
+            {id: 26, x: 12, y: 89, width: 32, height: 205, color: 'red'}, 
 
-            {id: 10, x: 30 + loc_left + loc_center, y: -10 + loc_top, width: 110, height: 20, color: 'red'}, 
-            {id: 11, x: 150 + loc_left + loc_center, y: 20 + loc_top, width: 30, height: 60, color: 'red'}, 
-            {id: 12, x: 150 + loc_left + loc_center, y: 80 + loc_top, width: 30, height: 60, color: 'red'}, 
-            {id: 13, x: 30 + loc_left + loc_center, y: 150 + loc_top, width: 110, height: 20, color: 'red'}, 
+            {id: 10, x: 277, y: 401, width: 32, height: 205, color: 'red'}, 
+            {id: 11, x: 165, y: 616, width: 103, height: 20, color: 'red'}, 
+            {id: 12, x: 47, y: 616, width: 107, height: 20, color: 'red'}, 
+            {id: 13, x: 12, y: 404, width: 32, height: 205, color: 'red'}, 
         ];
+
+        var now = new Date();
+        $('#start_date').val(now.toISOString().slice(0, 16));
 
         $('#setteam').submit(function(){
             $.post(api_server + '/v1/team/info', {username: 'hata', apikey: '2e24be993e86887273d4270e60cc72b068a6ab2883f149404844089eadb1c832', teamid: $('#teamid').val()}, function(res){
                 if (res.status == 0){
-                    var playable = 'プレイ可能: ';
+                    var players = [];
 
                     res.owners.forEach(function(owner){
-                        playable += owner + ' ';
+                        players.push(owner);
                     });
                     res.members.forEach(function(member){
-                        playable += member + ' ';
+                        players.push(member);
                     });
 
-                    $('#playable').html(playable);
+                    ['#left_0', '#left_1', '#right_0', '#right_1', '#first_service', '#first_receive', '#attacker', '#breaked'].forEach(function(selbox){
+                        $(selbox).empty();
+                        players.forEach(function(player){
+                            $(selbox).append('<option value="' + player + '">' + player + '</option>');
+                        });
+                    });
+                    $('#left_1').append('<option value="">なし</option>');
+                    $('#right_1').append('<option value="">なし</option>');
                 }/*else if (res.status == 0){
                 }*/
             });
@@ -70,7 +79,7 @@
         });
 
         var time_auto = false;
-        setInterval(function(){
+        setInterval(function(){ // 時間の自動カウント
             if (time_auto){
                 var datestr = $('#date').val().split(':');
                 var hour, min, sec; 
@@ -100,6 +109,28 @@
         actionList.forEach(function(action){
             $('#action').append('<option value="' + action.id + '">' + action.name + '</option>');
         });
+
+        var getPoint = function(){
+            var arrows = $('#sample1').jqGrid('getDataIDs');
+            var point_left = point_right = 0;
+            arrows.forEach(function(id){
+                var row = $('#sample1').getRowData(id);
+                if (row.position <= 13){
+                    point_right++;
+                }else{
+                    point_left++;
+                }
+            });
+
+            return {left: point_left, right: point_right};
+        };
+
+        var updatePoint = function(){   // 点数の更新表示
+            var points = getPoint();
+
+            $('#point_left').html('左<br>' + points.left);
+            $('#point_right').html('右<br>' + points.right);
+        };
 
         locList.forEach(function(loc){
             $('#location').append('<input id="loc_' + loc.id + '" type="button" value="' + loc.id + '" style="position: absolute; top: ' + loc.y + 'px; left: ' + loc.x + 'px; width: ' + loc.width + 'px; height: ' + loc.height + 'px; color: ' + loc.color + '">');
@@ -133,20 +164,33 @@
                     attacker: $('#attacker').val(), 
                     breaked: $('#breaked').val(), 
                 });
+
+                updatePoint();
             });
         });
 
         //列の設定
         var colModelSettings= [	
-            {name:"time",index:"time",width:250,align:"center",classes:"time_class", editable:true, sorttype: function(cell){
+            {name:"time",index:"time",width:75,align:"center",classes:"time_class", editable:false, sorttype: function(cell){
                 return new Date(cell).getTime();
+            }, formatter: function(val){
+                var start_time = (new Date($('#start_date').val())).getTime();
+                var time = (new Date(val)).getTime();
+                var rel_time = time - start_time;
+
+                var m = Math.floor(rel_time/1000/60);
+                var s = Math.floor(rel_time/1000)%60;
+                return m + '分' + s + '秒';
             }},
-            {name:"technic",index:"technic",width:50,align:"center",classes:"technic_class", editable:true},
+            {name:"technic",index:"technic",width:100,align:"center",classes:"technic_class", editable:false, formatter: function(val){
+                return actionList.filter(function(item){
+                    if (item.id == val) return true;
+                })[0].name;
+            }},
             {name:"position",index:"position",width:50,align:"center",classes:"position_class", editable:true},
             {name:"attacker",index:"attacker",width:150,align:"center",classes:"attacker_class", editable:true},
             {name:"breaked",index:"breaked",width:150,align:"center",classes:"breaked_class", editable:true},
         ]
-        //列の表示名
         var colNames = ['時間', '技', '落下点', '点数を決めた人', '点数を決められた人'];
 
         //テーブルの作成
@@ -167,7 +211,7 @@
             multiselect: true, 
         });
 
-        $('#del').click(function(){
+        $('#del').click(function(){ // 行削除
             var arrrows = $("#sample1").getGridParam("selarrrow");
                 if(arrrows.length == 0) {
                     alert("削除する行を選択してください。");
@@ -180,6 +224,7 @@
                         $("#sample1").delRowData(arrrows[i]);
                     }
                 }
+            updatePoint();
         });
 
         var genRequest = function(){
