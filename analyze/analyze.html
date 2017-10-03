@@ -1,0 +1,60 @@
+<html>
+    <head>
+        <script type="text/javascript" src="../jquery-3.2.1.min.js"></script>
+        <script type="text/javascript" src="../common.js"></script>
+        <script type="text/javascript" src="../Chart.min.js"></script>
+    </head>
+    <body>
+        <div style="width: 477px; ">
+            <canvas id="myChart" width="477" height="308" style="width: 477px; background-image: url(chart_back.png); background-repeat: no-repeat;  border: 16px solid rgb(45, 135, 178); "></canvas>
+        </div>
+<script>
+
+var locs = ['1', '2', '3', '4', '5', '6', '7', ];
+var nums = [0, 10, 2, 1, 7, 2, 5];
+
+var ctx = document.getElementById("myChart").getContext('2d');
+var myChart = new Chart(ctx, {
+    type: 'bar',
+    data: {
+        labels: locs,
+        datasets: [{
+            data: nums,
+            backgroundColor: 'rgba(54, 162, 211, 0.5)',
+            borderColor: 'white',
+            borderWidth: 1
+        }]
+    },
+    options: {
+        title: {
+            display: true, 
+            text: 'スマッシュ', 
+            fontColor: 'white', 
+            fontSize: 20, 
+        }, 
+        legend: {
+            display: false
+        }, 
+        scales: {
+            xAxes: [{
+                gridLines: {
+                    display: false, 
+                    color: 'rgba(54, 162, 211, 0.5)', 
+                }, 
+                ticks: {
+                    fontColor: 'white', 
+                    fontSize: 14, 
+                }, 
+            }], 
+            yAxes: [{
+                ticks: {
+                    fontColor: 'white', 
+                    fontSize: 12, 
+                }, 
+            }], 
+        }
+    }
+});
+</script>
+    </body>
+</html>
