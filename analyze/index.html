@@ -1,0 +1,32 @@
+<html>
+    <head>
+	<meta charset="utf-8">
+        <script type="text/javascript" src="../jquery-3.2.1.min.js"></script>
+        <script type="text/javascript" src="../common.js"></script>
+        <script type="text/javascript" src="../Chart.min.js"></script>
+    </head>
+    <body>
+	<div style="float: left; ">
+		オーナー<input id="username" type="text"><br>
+		APIキー<input id="apikey" type="text"><br>
+		試合形式<select id="format">
+			<option value="">指定なし</option>
+			<option value="single">シングルス</option>
+			<option value="double">ダブルス</option>
+		</select><br>
+		技<input type="button" value="条件追加" onclick="appendTecSelect(); ">
+		<div id="technique"></div>
+		対戦相手1<input id="play_vs" type="text" placeholder="指定なし"><br>
+		対戦相手2<input id="play_vs_2" type="text" placeholder="指定なし"><br>
+		<input id="run" type="button" value="分析">
+	</div>
+
+	<div style="float: left; margin-left: 2em; ">
+		<div id="legend"></div>
+	        <div style="width: 477px; ">
+	            <canvas id="myChart" width="477" height="308" style="width: 477px; background-image: url(chart_back.png); background-repeat: no-repeat;  border: 16px solid rgb(45, 135, 178); "></canvas>
+		</div>
+	</div>
+	<script type="text/javascript" src="analyze.js"></script>
+    </body>
+</html>
