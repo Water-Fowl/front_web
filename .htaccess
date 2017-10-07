@@ -1,0 +1,5 @@
+AuthUserfile /var/www/.htpasswd
+AuthName "Developer only. "
+AuthType Basic
+require valid-user
+

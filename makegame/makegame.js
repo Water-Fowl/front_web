@@ -1,3 +1,25 @@
+var userList = {
+	hata: {apikey: '2e24be993e86887273d4270e60cc72b068a6ab2883f149404844089eadb1c832'},
+
+	A: {apikey: '251e45d5033bebaec8d9d9f7f77b11e1a94fe307835e33e64ca6e17216c9c9be'},
+	B: {apikey: '65e848efa63ee87b8d68c6b4b6e97b3d91bcd84a37ce2cb4b1683a58105c440f'},
+	C: {apikey: '26c8cccfc9f35778259a4b3ae842dfe4c2ae708b5d9fe32511aab7af54fb69fa'},
+	D: {apikey: '8113f511191058f83dc2fba97d23eb73d5c02cc9f7c7b5b92996d7ce4a9b7487'},
+	E: {apikey: '005fa86397427b469f670a55614074bda4de873f68967f6a70e78edcd8aa46ae'},
+
+	F: {apikey: 'eeb48079b87bef492b50f9717df28bd9230db9a0a30bb47708ba9b59ece58d32'},
+	G: {apikey: 'fdbcdffde4994b69f7f862ffeafb4f688de11cfd46d70b5c08f2ee56035f8eb1'},
+	H: {apikey: '21a72b4c1d2c956f8c02e6f16e8c0cbce88491c1e30b1afe07b7679415741959'},
+	I: {apikey: '10f2b619b4b597efbb4f49deebc4a5e613c6111b74914f33a2f7fe40fc2405b6'},
+	J: {apikey: 'ca99375806c3cc4b4594d14dc3ec7d0c4189acd61071618df7d12d4fc65827a6'},
+};
+
+var teamList = {
+	'ee124009543147a307a95f41ffcda90dfdd8569d3b10e1a324f252ce1c085682': {name: 'nankatsu'},
+	'ee6906af91f26269c8634212c6d91efbabb646cf2a36fa4fde7f52a3117b31e3': {name: 'team_1'},
+	'92220febe3e222407ff0be7d577827ed797dcfcfe65a1b835d317836e446b250': {name: 'team_2'},
+};
+
         var actionList = [
             {id: 1, name: 'スマッシュ'}, 
             {id: 2, name: 'クリア'}, 
@@ -49,11 +71,20 @@
             {id: 13, x: 12, y: 404, width: 32, height: 205, color: 'red'}, 
         ];
 
+for(var name in userList){
+	$('#user').append('<option value="' + name + '">' + name + '</option>');
+}
+
+for(var id in teamList){
+	$('#team').append('<option value="' + id + '">' + teamList[id].name + '</option>');
+}
+
         var now = new Date();
         $('#start_date').val(now.toISOString().slice(0, 16));
 
         $('#setteam').submit(function(){
-            $.post(api_server + '/v1/team/info', {username: 'hata', apikey: '2e24be993e86887273d4270e60cc72b068a6ab2883f149404844089eadb1c832', teamid: $('#teamid').val()}, function(res){
+		var username = $('#user').val();
+            $.post(api_server + '/v1/team/info', {username: username, apikey: userList[username].apikey, teamid: $('#team').val()}, function(res){
                 if (res.status == 0){
                     var players = [];
 
@@ -267,13 +298,14 @@
             if ($('#right_0').val() != '') pair_right.push($('#right_0').val());
             if ($('#right_1').val() != '') pair_right.push($('#right_1').val());            
 
+		var username = $('#user').val();
             return {
-                username: 'hata', 
-                apikey: '2e24be993e86887273d4270e60cc72b068a6ab2883f149404844089eadb1c832', 
+		username: username,
+		apikey: userList[username].apikey,
                 score: JSON.stringify({
                     //game_id: '0', 
                     //created_by: 'test', 
-                    team_id: $('#teamid').val(), 
+                    team_id: $('#team').val(), 
                     start_time: start_time, 
                     end_time: end_time, 
                     pair_left: pair_left, 
