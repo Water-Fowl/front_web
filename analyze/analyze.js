@@ -126,7 +126,7 @@ $.get(api_server + '/v1/game/analysis', query, function(res){
 			var datasets = [];
 			var i = 0;
 			for(var tec in res.result){
-				if ((tec == "")||(tec == 1)) continue;	// 技名以外は除外
+				if ((tec == "")) continue;	// 除外リスト
 
 				var nums = (new Array(locs.length)).fill(0);
 
@@ -134,8 +134,13 @@ $.get(api_server + '/v1/game/analysis', query, function(res){
 					nums[locIndex[Number(num)]] += res.result[tec][num];
 				}
 
+				var action = actionList.find(function(elem){
+					return elem.id == tec;
+				});
+				var action_name = '不明な技';
+				if (action) action_name = action.name;
 				datasets.push({
-					label: String(tec),
+					label: action_name,
 					data: nums,
 					backgroundColor: 'hsla(198, 50%, ' + String(i*20) + '%, 0.5)',
 					borderColor: 'white',

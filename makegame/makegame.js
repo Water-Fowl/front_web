@@ -187,7 +187,7 @@ for(var id in teamList){
                 }
 
                 var abs_time = new Date(start_time.getTime() + rel_time);
-                
+
                 $("#sample1").addRowData(undefined, {
                     technic: Number($('#action').val()), 
                     position: Number(loc.id), 
@@ -204,7 +204,7 @@ for(var id in teamList){
         var colModelSettings= [	
             {name:"time",index:"time",width:75,align:"center",classes:"time_class", editable:false, sorttype: function(cell){
                 return new Date(cell).getTime();
-            }, formatter: function(val){
+            }, /*formatter: function(val){
                 var start_time = (new Date($('#start_date').val())).getTime();
                 var time = (new Date(val)).getTime();
                 var rel_time = time - start_time;
@@ -212,7 +212,7 @@ for(var id in teamList){
                 var m = Math.floor(rel_time/1000/60);
                 var s = Math.floor(rel_time/1000)%60;
                 return m + '分' + s + '秒';
-            }},
+            }*/},
             {name:"technic",index:"technic",width:100,align:"center",classes:"technic_class", editable:false, formatter: function(val){
                 return actionList.filter(function(item){
                     if (item.id == val) return true;
@@ -275,7 +275,9 @@ for(var id in teamList){
             arrows.forEach(function(id){
                 var row = $('#sample1').getRowData(id);
 
-                technic.push(row.technic);
+                technic.push(actionList.find(function(elem){
+			return elem.name == row.technic;
+		}).id);
                 position.push(row.position);
                 time.push(row.time);
                 attacker.push(row.attacker);
@@ -332,7 +334,6 @@ for(var id in teamList){
         });
 
         $('#submit').click(function(){
-            
             $.post(api_server + '/v1/game/', genRequest(), function(res){
                 alert(res.message  + ' gameid: ' + res.gameid);
                 console.log(res);
