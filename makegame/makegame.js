@@ -275,10 +275,10 @@ for(var id in teamList){
             arrows.forEach(function(id){
                 var row = $('#sample1').getRowData(id);
 
-                technic.push(actionList.find(function(elem){
+                technic.push(Number(actionList.find(function(elem){
 			return elem.name == row.technic;
-		}).id);
-                position.push(row.position);
+		}).id));
+                position.push(Number(row.position));
                 time.push(row.time);
                 attacker.push(row.attacker);
                 breaked.push(row.breaked);

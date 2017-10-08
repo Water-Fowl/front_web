@@ -126,8 +126,6 @@ $.get(api_server + '/v1/game/analysis', query, function(res){
 			var datasets = [];
 			var i = 0;
 			for(var tec in res.result){
-				if ((tec == "")) continue;	// 除外リスト
-
 				var nums = (new Array(locs.length)).fill(0);
 
 				for(var num in res.result[tec]){
