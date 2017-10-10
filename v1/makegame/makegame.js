@@ -1,11 +1,11 @@
 var userList = {
 	hata: {apikey: '2e24be993e86887273d4270e60cc72b068a6ab2883f149404844089eadb1c832'},
 
-	A: {apikey: '251e45d5033bebaec8d9d9f7f77b11e1a94fe307835e33e64ca6e17216c9c9be'},
-	B: {apikey: '65e848efa63ee87b8d68c6b4b6e97b3d91bcd84a37ce2cb4b1683a58105c440f'},
-	C: {apikey: '26c8cccfc9f35778259a4b3ae842dfe4c2ae708b5d9fe32511aab7af54fb69fa'},
-	D: {apikey: '8113f511191058f83dc2fba97d23eb73d5c02cc9f7c7b5b92996d7ce4a9b7487'},
-	E: {apikey: '005fa86397427b469f670a55614074bda4de873f68967f6a70e78edcd8aa46ae'},
+	A: {apikey: '251e45d5033bebaec8d9d9f7f77b11e1a94fe307835e33e64ca6e17216c9c9be', screen_name: '上田拓馬'},
+	B: {apikey: '65e848efa63ee87b8d68c6b4b6e97b3d91bcd84a37ce2cb4b1683a58105c440f', screen_name: '桃田健斗'},
+	C: {apikey: '26c8cccfc9f35778259a4b3ae842dfe4c2ae708b5d9fe32511aab7af54fb69fa', screen_name: '奈良岡功大'},
+	D: {apikey: '8113f511191058f83dc2fba97d23eb73d5c02cc9f7c7b5b92996d7ce4a9b7487', screen_name: '武下利一'},
+	E: {apikey: '005fa86397427b469f670a55614074bda4de873f68967f6a70e78edcd8aa46ae', screen_name: '田児賢一'},
 
 	F: {apikey: 'eeb48079b87bef492b50f9717df28bd9230db9a0a30bb47708ba9b59ece58d32'},
 	G: {apikey: 'fdbcdffde4994b69f7f862ffeafb4f688de11cfd46d70b5c08f2ee56035f8eb1'},

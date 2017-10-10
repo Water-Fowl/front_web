@@ -112,6 +112,15 @@ $('#run').click(function(){
 $.get(api_server + '/v1/game/analysis', query, function(res){
 		if (res.message == 'ok'){
 			console.log(res.result);
+                       	var new_result = {};
+	                for(var pos in res.result){
+                               	for(var tec in res.result[pos]){
+					if (new_result[tec] === undefined) new_result[tec] = {};
+					new_result[tec][pos] = Number(res.result[pos][tec]);
+				}
+			}
+			res.result = new_result;
+			console.log(res.result);
 
 			var locs = [];
 			locList.forEach(function(loc){
