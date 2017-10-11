@@ -1,0 +1,50 @@
+body{
+	background-color: black;
+	margin: 0 0;
+}
+
+#contents{
+	background-image: url(image/bg.png);
+	background-size: cover;
+	background-repeat: no-repeat;
+	background-position: center center;
+	background-attachment: fixed;
+}
+
+#header{
+	height: 2em;
+	background-image: url(image/topbar.png);
+	background-size: cover;
+	background-repeat: no-repeat;
+	font-size: 2vw;
+}
+
+.topitem{
+	float: left;
+	margin-top: 0.5em;
+	margin-left: 0.5em;
+	background-color: white;
+	border: 1px solid lightgray;
+}
+
+#avatar{
+	float: right;
+	height: 1.5em;
+	margin-top: 0.25em;
+	margin-right: 1em;
+}
+
+#head{
+	height: 55.694444444vw;	/* 背景画像のアスペクト比 */
+	background-image: url(image/head.jpg);
+	background-size: contain;
+	background-repeat: no-repeat;
+
+	position: relative;
+}
+
+@media only screen and (min-width: 768px) {	/* タブレット, PC */
+	body{
+		margin: 0 10%;
+	}
+}
