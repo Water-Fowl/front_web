@@ -11,7 +11,7 @@ body{
 	background-attachment: fixed;
 }
 
-#header{
+nav{
 	height: 2em;
 	background-image: url(image/topbar.png);
 	background-size: cover;
@@ -34,13 +34,30 @@ body{
 	margin-right: 1em;
 }
 
-#head{
-	height: 55.694444444vw;	/* 背景画像のアスペクト比 */
-	background-image: url(image/head.jpg);
-	background-size: contain;
-	background-repeat: no-repeat;
-
+header{
+	/*height: 55.694444444vw;*/
 	position: relative;
+	/*background-image: url(image/head.jpg);
+	background-size: contain;
+	background-repeat: no-repeat;*/
+}
+
+article{
+	margin: 1em; 
+	color: lightyellow;
+}
+
+.desc > img{
+	width: 25%;
+}
+.desc > h2{
+	font-size: 3vw;
+}
+.desc > p{
+	display: inline-block;
+	width: 70%;
+	margin: 0 0;
+	font-size: 1.75vw;
 }
 
 @media only screen and (min-width: 768px) {	/* タブレット, PC */
