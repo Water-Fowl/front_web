@@ -47,21 +47,60 @@ article{
 	color: lightyellow;
 }
 
-.desc > img{
-	width: 25%;
+.desc{
+	margin-bottom: 2em;
 }
+
 .desc > h2{
-	font-size: 3vw;
+	margin-bottom: 0.5em;
 }
-.desc > p{
-	display: inline-block;
-	width: 70%;
-	margin: 0 0;
-	font-size: 1.75vw;
+
+@media only screen and (max-width: 767px) {	/* スマホ */
+	.desc{
+		text-align: center;
+	}
+	.desc > img{
+		width: 50%;
+		margin-bottom: 1em;
+	}
+	.desc > h2{
+		text-align: center;
+		font-size: 4vw;
+	}
+	.desc > p{
+		display: inline-block;
+		text-align: left;
+		width: 75%;
+		margin: 0 0;
+		font-size: 2.75vw;
+	}
 }
 
 @media only screen and (min-width: 768px) {	/* タブレット, PC */
 	body{
 		margin: 0 10%;
+	}
+
+	.desc > img{
+		width: 25%;
+	}
+	.desc > h2{
+		font-size: 3vw;
+	}
+	.desc > p{
+		display: inline-block;
+		width: 70%;
+		margin: 0 0;
+		font-size: 1.75vw;
+	}
+
+	.desc.left > img{
+		float: left;
+		margin-right: 1em;
+	}
+
+	.desc.right > img{
+		float: right;
+		margin-left: 1em;
 	}
 }
