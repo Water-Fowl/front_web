@@ -1,6 +1,14 @@
+@import url(http://fonts.googleapis.com/earlyaccess/notosansjp.css);
+@import url(http://fonts.googleapis.com/css?family=Lato&subset=latin,latin-ext);
+
 body{
 	background-color: black;
 	margin: 0 0;
+	font-family: 'Noto Sans JP', Meiryo, Arial, sans-serif;
+}
+
+h1, h2, h3, h4, h5, h6{
+	font-family: 'Lato', Meiryo, Arial, sans-serif;
 }
 
 #contents{
