@@ -2,6 +2,7 @@
 <html lang="ja">
 	<head>
 		<link rel="stylesheet" href="https://bootswatch.com/4/darkly/bootstrap.min.css">
+		<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/animate.css/3.5.2/animate.min.css">
 		<style>
 			@import url(http://fonts.googleapis.com/earlyaccess/notosansjp.css);
 			@import url(http://fonts.googleapis.com/css?family=Lato&subset=latin,latin-ext);
@@ -89,8 +90,10 @@
 		</nav>
 		<header>
 			<div class="header-darkskelton">
-				<h1>Maximize Human Possibility</h1>
-				<h2>-人の可能性を最大化する-</h2>
+				<div class="fadeIn animated" style="animation-delay: 0.25s;">
+					<h1>Maximize Human Possibility</h1>
+					<h2>-人の可能性を最大化する-</h2>
+				</div>
 			</div>
 			<div class="header-gradient">
 			</div>
