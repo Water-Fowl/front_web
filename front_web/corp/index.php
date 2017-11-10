@@ -7,13 +7,13 @@
 			@import url(http://fonts.googleapis.com/css?family=Lato&subset=latin,latin-ext);
 
 			body{
-				font-family: 'Noto Sans JP', Meiryo, Arial, sans-serif;
+				font-family: 'Noto Sans JP', Arial, Meiryo, sans-serif;
 			}
 			.wrapper{
 				overflow: hidden;
 			}
 			h1, h2, h3, h4, p{
-				font-family: 'Lato', Meiryo, Arial, sans-serif;
+				font-family: 'Lato', Arial, Meiryo, sans-serif;
 			}
 			h1{
 				font-size: 5vw;
@@ -27,14 +27,28 @@
 				font-weight: bold;
 			}
 			header{
+				position: relative;
 				background-image: url(header.jpg);
 				background-repeat: no-repeat;
 				background-position: center center;
 				background-size: cover;
 				text-align: center;
-				height: 100vh;
+				height: 150vh;
 			}
-			.header-padding{ padding-top: 30vh; }
+			.header-darkskelton{
+				background-color: rgba(0, 0, 0, 0.6);
+				height: 33.33%;
+				padding-top: 30vh;
+			}
+			.header-gradient{
+				background: linear-gradient(rgba(0, 0, 0, 0.6), rgba(0, 0, 0, 1.0));
+				height: 33.33%;
+			}
+			.header-bottom{
+				padding-top: 15vh;
+				background: black;
+				height: 33.33%;
+			}
 			section{
 				background-repeat: no-repeat;
 				background-position: center center;
@@ -55,41 +69,37 @@
 	</head>
 	<body>
 		<div class="wrapper">
-<nav class="navbar navbar-expand-lg navbar-dark bg-primary fixed-top">
-  <a class="navbar-brand" href="#">Navbar</a>
-    <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarColor01" aria-controls="navbarColor01" aria-expanded="false" aria-label="Toggle navigation">
-        <span class="navbar-toggler-icon"></span>
-          </button>
-          
-            <div class="collapse navbar-collapse" id="navbarColor01">
-                <ul class="navbar-nav mr-auto">
-                      <li class="nav-item active">
-                              <a class="nav-link" href="#">Home <span class="sr-only">(current)</span></a>
-                                    </li>
-                                          <li class="nav-item">
-                                                  <a class="nav-link" href="#">Features</a>
-                                                        </li>
-                                                              <li class="nav-item">
-                                                                      <a class="nav-link" href="#">Pricing</a>
-                                                                            </li>
-                                                                                  <li class="nav-item">
-                                                                                          <a class="nav-link" href="#">About</a>
-                                                                                                </li>
-                                                                                                    </ul>
-                                                                                                        <form class="form-inline my-2 my-lg-0">
-                                                                                                              <input class="form-control mr-sm-2" type="text" placeholder="Search">
-                                                                                                                    <button class="btn btn-secondary my-2 my-sm-0" type="submit">Search</button>
-                                                                                                                        </form>
-                                                                                                                          </div>
-                                                                                                                          </nav>
+		<nav class="navbar bg-primary navbar-expand-lg navbar-dark">
+		<div class="container-fluid">
+			<div class="navbar-header">
+				<a class="navbar-brand" href="#"><img src="waterfowl.png" alt="Water Fowl" style="height: 1em; "></a>←横長のバナーが欲しい
+			</div>
+			<ul class="navbar-nav">
+				<button class="navbar-toggler collapsed" type="button" data-toggle="collapse" data-target="#navmenu" aria-controls="navmenu" aria-expanded="false" aria-label="Toggle navigation">
+					<span class="navbar-toggler-icon"></span>
+				</button>
+    	   		<div class="collapse navbar-collapse" id="navmenu">
+						<li><a class="nav-link" href="#vision">Vision</a></li>
+						<li><a class="nav-link" href="#service">Service</a></li>
+						<li><a class="nav-link" href="#about">About</a></li>
+						<li><a class="nav-link" href="#contact">Contact</a></li>
+				</div>
+			</ul>
+		</div>
+		</nav>
 		<header>
-			<div class="bg-darkskelton header-padding">
+			<div class="header-darkskelton">
 				<h1>Maximize Human Possibility</h1>
 				<h2>-人の可能性を最大化する-</h2>
 			</div>
+			<div class="header-gradient">
+			</div>
+			<div id="vision" class="header-bottom">
+				<h3>???</h3>
+			</div>
 		</header>
 		<article>
-		<section class="text-white" style="background-image: url(service.jpg); ">
+		<section id="service" class="text-white" style="background-image: url(service.jpg); ">
 			<div class="bg-darkskelton section-padding">
 				<h3>Service</h3>
 				<h4>Spolyzer</h4>
@@ -97,7 +107,7 @@
 				<img src="spolyzer.png" alt="Spolyzer" width="128px">
 			</div>
 		</section>
-		<section class="card text-white border-dark">
+		<section id="about" class="card text-white border-dark">
 			<div class="card-body section-padding">
 				<h3>About</h3>
 				<div class="row">
@@ -120,7 +130,7 @@
 				</div>
 			</div>
 		</section>
-		<section style="card bg-info">
+		<section id="contact" style="card bg-info">
 			<div class="card-body text-white section-padding">
 				<h3>Contact</h3>
 				<div class="row">
