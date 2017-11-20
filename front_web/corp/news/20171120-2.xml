@@ -1,0 +1,11 @@
+<?xml version="1.0" encoding="utf-8"?>
+<news>
+	<title>Newsウィジットを設置しました！ その2</title>
+	<article>
+		作成日時順にソートされるかのテストです。
+		Newsの日時は、ファイル作成日時から自動生成されます。
+		&lt;span class="text-danger"&gt;HTMLタグ&lt;/span&gt;が使えます。
+		Newsコンテンツは&lt;a href="news/20171120-2.xml"&gt;XMLタグ&lt;/a&gt;で記述しています。
+		改行はbrタグではなく、\nでできます。
+	</article>
+</news>
