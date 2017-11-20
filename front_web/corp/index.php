@@ -29,26 +29,28 @@
 			}
 			header{
 				position: relative;
-				background-image: url(header.jpg);
+				background-image: url(sports-studium.jpg);
 				background-repeat: no-repeat;
 				background-position: center center;
 				background-size: cover;
 				text-align: center;
-				height: 150vh;
+				/*height: 150vh;*/
 			}
 			.header-darkskelton{
 				background-color: rgba(0, 0, 0, 0.6);
-				height: 33.33%;
+				height: 50vh;
 				padding-top: 30vh;
 			}
 			.header-gradient{
 				background: linear-gradient(rgba(0, 0, 0, 0.6), rgba(0, 0, 0, 1.0));
-				height: 33.33%;
+				height: 50vh;
 			}
 			.header-bottom{
-				padding-top: 15vh;
+				text-align: center;
+				padding-top: 4em;
+				padding-bottom: 4em;
 				background: black;
-				height: 33.33%;
+				/*height: 33.33%;*/
 			}
 			section{
 				background-repeat: no-repeat;
@@ -97,10 +99,28 @@
 			</div>
 			<div class="header-gradient">
 			</div>
-			<div id="vision" class="header-bottom">
-				<h3>???</h3>
-			</div>
 		</header>
+			<div id="vision" class="header-bottom">
+				<h3>News</h3>
+				<?php
+					foreach(glob('news/*.xml') as $filename){
+						$news = simplexml_load_file($filename);
+				?>
+				<span style="display: inline-block; width: 25%; margin: 1em;">
+					<div class="card bg-light">
+						<div class="card-body text-left">
+							<span class="text-muted"><?php echo date('Y M. d', filectime($filename)); ?></span>
+							<center>
+								<h4><?php echo $news->title; ?></h4>
+								<br>
+								<?php if (isset($news->header)) echo '<img src="'.$news->header.'" style="width: 80%; ">'; ?>
+							</center>
+							<p class="text-muted"><?php echo nl2br($news->article); ?></p>
+						</div>
+					</div>
+				</span>
+				<?php } ?>
+				</div>
 		<article>
 		<section id="service" class="text-white" style="background-image: url(service.jpg); ">
 			<div class="bg-darkskelton section-padding">
@@ -165,29 +185,6 @@
 					</div>
 					<div class="col-4"></div>
 				</div>
-			</div>
-		</section>
-		<section class="bg-primary">
-			<div class="section-padding">
-				<h3>News</h3>
-				<?php
-					foreach(glob('news/*.xml') as $filename){
-						$news = simplexml_load_file($filename);
-				?>
-				<span style="display: inline-block; width: 25%; margin: 1em;">
-					<div class="card bg-light">
-						<div class="card-body text-left">
-							<span class="text-muted"><?php echo date('Y M. d', filectime($filename)); ?></span>
-							<center>
-								<h4><?php echo $news->title; ?></h4>
-								<br>
-								<?php if (isset($news->header)) echo '<img src="'.$news->header.'" style="width: 80%; ">'; ?>
-							</center>
-							<p class="text-muted"><?php echo nl2br($news->article); ?></p>
-						</div>
-					</div>
-				</span>
-				<?php } ?>
 			</div>
 		</section>
 		</article>
