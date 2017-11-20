@@ -133,8 +133,8 @@
 				</div>
 			</div>
 		</section>
-		<section id="contact" style="card bg-info">
-			<div class="card-body text-white section-padding">
+		<section id="contact">
+			<div class="text-white section-padding">
 				<h3>Contact</h3>
 				<div class="row">
 					<div class="col-4"></div>
@@ -165,6 +165,29 @@
 					</div>
 					<div class="col-4"></div>
 				</div>
+			</div>
+		</section>
+		<section class="bg-primary">
+			<div class="section-padding">
+				<h3>News</h3>
+				<?php
+					foreach(glob('news/*.xml') as $filename){
+						$news = simplexml_load_file($filename);
+				?>
+				<span style="display: inline-block; width: 25%; margin: 1em;">
+					<div class="card bg-light">
+						<div class="card-body text-left">
+							<span class="text-muted"><?php echo date('Y M. d', filectime($filename)); ?></span>
+							<center>
+								<h4><?php echo $news->title; ?></h4>
+								<br>
+								<?php if (isset($news->header)) echo '<img src="'.$news->header.'" style="width: 80%; ">'; ?>
+							</center>
+							<p class="text-muted"><?php echo nl2br($news->article); ?></p>
+						</div>
+					</div>
+				</span>
+				<?php } ?>
 			</div>
 		</section>
 		</article>
