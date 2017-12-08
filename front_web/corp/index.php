@@ -75,7 +75,7 @@
 		<nav class="navbar bg-primary navbar-expand-lg navbar-dark">
 		<div class="container-fluid">
 			<div class="navbar-header">
-				<a class="navbar-brand" href="#"><img src="waterfowl.png" alt="Water Fowl" style="height: 1em; "></a>←横長のバナーが欲しい
+				<a class="navbar-brand" href="#"><img src="waterfowl.png" alt="Water Fowl" style="height: 1em; "></a>
 			</div>
 			<ul class="navbar-nav">
 				<button class="navbar-toggler collapsed" type="button" data-toggle="collapse" data-target="#navmenu" aria-controls="navmenu" aria-expanded="false" aria-label="Toggle navigation">
@@ -153,7 +153,7 @@
 				</div>
 			</div>
 		</section>
-		<section id="contact">
+		<!--<section id="contact">
 			<div class="text-white section-padding">
 				<h3>Contact</h3>
 				<div class="row">
@@ -186,7 +186,7 @@
 					<div class="col-4"></div>
 				</div>
 			</div>
-		</section>
+		</section>-->
 		</article>
 		<footer class="footer bg-secondary text-center">
 				<span class="text-muted">©︎WaterFowl Inc.</span>
