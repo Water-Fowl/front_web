@@ -1,0 +1,11 @@
+<?xml version="1.0" encoding="utf-8"?>
+<news>
+	<title>Newsウィジットを設置しました！</title>
+	<header>spolyzer.png</header>
+	<article>
+		Newsウィジットを設置しました。
+		phpで処理しています。
+		Newsごとにサムネイル画像があると、見栄えがよさそうです。
+		クリックすると、Newsの詳細が見れるようにします。
+	</article>
+</news>
