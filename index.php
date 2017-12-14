@@ -14,8 +14,8 @@
 	<body>
 		<?php bodyHeader(); ?>
 			<div id="news" class="header-bottom">
-				<h3>News</h3>
-				<?php newsList(3, 0, true); ?>
+				<!--<h3>News</h3>
+				<?php newsList(3, 0, true); ?>-->
 			</div>
 		<article>
 		<section id="service" class="text-white" style="background-image: url(service.jpg); ">
@@ -26,8 +26,18 @@
 				<img src="spolyzer.png" alt="Spolyzer" width="128px">
 			</div>
 		</section>
-		<section id="about" class="card text-white border-dark">
-			<div class="card-body section-padding">
+		<!--<section id="members" class="text-white bg-info">
+			<div class="section-padding bg-darkskelton">
+				<h3>Members</h3>
+				<table class="margin-center"><tr>
+					<td><div class="member-widget" ref="/member/mii.xml"></div></td>
+					<td><div class="member-widget" ref="/member/mii2.xml"></div></td>
+					<td><a href="news.php"><button type="button" class="btn btn-success" style="border-radius: 50%; font-weight: bold; ">&gt</button></a></td>
+				</tr></table>
+			</div>
+		</section>-->
+		<section id="about" class="text-white bg-light">
+			<div class="section-padding">
 				<h3>About</h3>
 				<div class="row">
 					<div class="col-2"></div>

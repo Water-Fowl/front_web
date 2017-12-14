@@ -65,6 +65,7 @@
 				margin-left: auto;
 				margin-right: auto;
 			}
+
 			.news-widget{
 				display: inline-block;
 				width: 240px;
@@ -83,4 +84,40 @@
 }
 .page-item-center{
 	display: inherit;
+}
+
+ul.share-buttons{
+	list-style: none;
+	padding: 0;
+}
+ul.share-buttons li{
+	display: inline;
+}  
+ul.share-buttons .sr-only{
+	position: absolute;
+	clip: rect(1px 1px 1px 1px);
+	clip: rect(1px, 1px, 1px, 1px);
+	padding: 0;
+	border: 0;
+	height: 1px;
+	width: 1px;
+	overflow: hidden;
+}
+
+.member-widget{
+	display: inline-block;
+	width: 320px;
+	margin: 1em;
+}
+.member-widget:hover{
+	border: 1px solid #00bc8c;
+}
+
+.avatar{
+	border-radius: 50%;
+}
+
+.a-disabled{
+	text-decoration: none;
+	color: inherit;
 }
