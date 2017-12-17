@@ -26,6 +26,7 @@ $(function(){
 		}, 'xml');
 		$(this).attr('class', 'news-widget card bg-light fadeIn animated');
 	});
+	$('.news-widget').attr('class', 'news-widget d-none');
 
 	/*$('.member-widget').each(function(){
 		var filename = $(this).attr('ref');
