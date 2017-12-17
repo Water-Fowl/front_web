@@ -34,7 +34,7 @@
 								<h3 class="card-title" style="display: inline; "><?php echo $news->title; ?></h3>
 							</div>
 							<div class="card-body">
-								<?php if (isset($news->header)) echo '<img src="'.$news->header.'" style="width: 25%; float: right; ">'; ?>
+								<?php if (isset($news->header)) echo '<img src="'.$news->header.'" class="rounded" style="width: 25%; float: right; ">'; ?>
 								<p class=""><?php echo nl2br($news->article); ?></p>
 							</div>
 						</div>

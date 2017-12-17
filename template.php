@@ -8,7 +8,7 @@
 
 				echo '<td class="news-widget" ref="'.$filename.'"></td>';
 				if ($j >= ($i + 1)*$n){
-					if ($isMore){?><td><a href="news.php"><button type="button" class="btn btn-primary" style="border-radius: 50%; font-weight: bold; ">&gt</button></a></td><?php }
+					if ($isMore){?><td><a href="/news.php#news"><button type="button" class="btn btn-primary" style="border-radius: 50%; font-weight: bold; ">&gt</button></a></td><?php }
 					$isEnd = false;
 					break;
 				}
@@ -36,6 +36,7 @@
 				</button>
     	   		<div class="collapse navbar-collapse" id="navmenu">
 						<li><a class="nav-link" href="/#news">News</a></li>
+						<li><a class="nav-link" href="/#members">Members</a></li>
 						<li><a class="nav-link" href="/#service">Service</a></li>
 						<li><a class="nav-link" href="/#about">About</a></li>
 						<li><a class="nav-link" href="/#contact">Contact</a></li>

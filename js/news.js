@@ -10,7 +10,7 @@ $(function(){
 		$.get(filename, {}, function(res, stat, xhr){
 			var img_html = '<img src="'+$(res).find('header').html()+'" class="rounded" style="width: 80%; ">';
 			$(target).html(`
-				<a href="/news.php?`+$.param({ref: filename.replace('news/', '').replace('.xml', '')})+`" style="text-decoration: none; color: inherit; "><div class="card-body text-left">
+				<a href="/news.php?`+$.param({ref: filename.replace('news/', '').replace('.xml', '')})+`#news" style="text-decoration: none; color: inherit; "><div class="card-body text-left">
 				<div style="height: 25em; overflow: hidden; ">
 				<span class="text-muted">`+new Date(xhr.getResponseHeader('Last-Modified')).toLocaleDateString()+`</span>
 				<center>
