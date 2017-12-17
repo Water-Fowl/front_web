@@ -3,7 +3,9 @@
 		?><table class="margin-center"><tr><?php
 			$j = 0;
 			$isEnd = true;
-			foreach(glob('news/*.xml') as $filename){
+			$news = glob('news/*.xml');
+			rsort($news);
+			foreach($news as $filename){
 				if ($j++ < $i*$n) continue;
 
 				echo '<td class="news-widget" ref="'.$filename.'"></td>';
