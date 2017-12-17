@@ -14,7 +14,7 @@ $(function(){
 				<div style="height: 25em; overflow: hidden; ">
 				<span class="text-muted">`+new Date(xhr.getResponseHeader('Last-Modified')).toLocaleDateString()+`</span>
 				<center>
-					<h4>`+$(res).find('title').html()+`</h4>
+					<h4 style="font-size: medium; ">`+$(res).find('title').html()+`</h4>
 					<br>
 					`+img_html+`
 				</center>
@@ -27,7 +27,7 @@ $(function(){
 	});
 	$('.news-widget').attr('class', 'news-widget card bg-light');
 
-	$('.member-widget').each(function(){
+	/*$('.member-widget').each(function(){
 		var filename = $(this).attr('ref');
 		var target = this;
 
@@ -49,6 +49,6 @@ $(function(){
 			`);
 		}, 'xml');
 	});
-	$('.member-widget').attr('class', 'member-widget card bg-light');
+	$('.member-widget').attr('class', 'member-widget card bg-light');*/
 
 });

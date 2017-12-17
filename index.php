@@ -14,10 +14,62 @@
 	<body>
 		<?php bodyHeader(); ?>
 			<div id="news" class="header-bottom">
-				<!--<h3>News</h3>
-				<?php newsList(3, 0, true); ?>-->
+				<h3>News</h3>
+				<?php newsList(3, 0, true); ?>
 			</div>
 		<article>
+		<section id="members" class="text-white">
+			<div class="section-padding bg-darkskelton">
+				<h3>Members</h3>
+				<table class="margin-center"><tr>
+				<?php
+					$members = glob($_SERVER['DOCUMENT_ROOT'].'/member/*.xml');
+					rsort($members);
+					foreach($members as $filename){
+						$member = simplexml_load_file($filename);
+						?>
+						<td><a href="?<?php echo http_build_query(['member' => basename($filename, '.xml')]); ?>#members" class="a-disabled"><div style="margin: 0 0.5em; ">
+							<img src="<?php echo $member->img; ?>" class="avatar" style="height: 5em;" onmouseover="$(this).attr('src', '<?php echo $member->imghover; ?>'); " onmouseout="$(this).attr('src', '<?php echo $member->img; ?>'); "><br>
+							<span><?php echo $member->name; ?></span>
+						</div></a></td>
+						<?php
+					}
+				?>
+				</tr></table>
+				<?php
+					if (isset($_GET['member'])){
+						$filename = $_SERVER['DOCUMENT_ROOT'].'/member/'.basename($_GET['member']).'.xml';	// basename()->他ディレクトリを参照させない
+						if (file_exists($filename)){
+							$member = simplexml_load_file($filename); ?>
+							<br>
+							<br>
+							<div class="row">
+								<div class="col-2"></div>
+								<div class="col-8 text-left fadeIn animated">
+									<img src="<?php echo $member->imglarge; ?>" style="float: right; width: 50%; ">
+									<span class="text-muted"><?php echo $member->position; ?></span>
+									<h4><?php echo $member->name; ?></h4>
+									<p><?php echo $member->article; ?></p>
+									<?php
+										foreach($member->item as $item){
+											?>
+											<span class="text-muted"><?php echo $item->name; ?>: <?php echo $item->value; ?></span><br>
+											<?php
+										}
+									?>
+								</div>
+								<div class="col-2"></div>
+							</div>
+						<?php }
+					}
+				?>
+				<!--<table class="margin-center"><tr>
+					<td><div class="member-widget" ref="/member/mii.xml"></div></td>
+					<td><div class="member-widget" ref="/member/mii2.xml"></div></td>
+					<td><a href="news.php"><button type="button" class="btn btn-success" style="border-radius: 50%; font-weight: bold; ">&gt</button></a></td>
+				</tr></table>-->
+			</div>
+		</section>
 		<section id="service" class="text-white" style="background-image: url(service.jpg); ">
 			<div class="bg-darkskelton section-padding">
 				<h3>Service</h3>
@@ -26,16 +78,6 @@
 				<img src="spolyzer.png" alt="Spolyzer" width="128px">
 			</div>
 		</section>
-		<!--<section id="members" class="text-white bg-info">
-			<div class="section-padding bg-darkskelton">
-				<h3>Members</h3>
-				<table class="margin-center"><tr>
-					<td><div class="member-widget" ref="/member/mii.xml"></div></td>
-					<td><div class="member-widget" ref="/member/mii2.xml"></div></td>
-					<td><a href="news.php"><button type="button" class="btn btn-success" style="border-radius: 50%; font-weight: bold; ">&gt</button></a></td>
-				</tr></table>
-			</div>
-		</section>-->
 		<section id="about" class="text-white bg-light">
 			<div class="section-padding">
 				<h3>About</h3>
@@ -97,3 +139,4 @@
 		<?php bodyFooter(); ?>
 	</body>
 </html>
+
