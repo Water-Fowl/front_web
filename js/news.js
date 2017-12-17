@@ -24,7 +24,7 @@ $(function(){
 				</div></a>
 			`);
 		}, 'xml');
-		$(this).attr('class', 'news-widget card bg-light fadeIn animated');
+		$(this).attr('class', 'news-widget card bg-light fadeIn animated d-inline-block');
 	});
 	$('.news-widget').attr('class', 'news-widget d-none');
 
