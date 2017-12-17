@@ -24,7 +24,7 @@
 				<table class="margin-center"><tr>
 				<?php
 					$members = glob($_SERVER['DOCUMENT_ROOT'].'/member/*.xml');
-					rsort($members);
+					//rsort($members);
 					foreach($members as $filename){
 						$member = simplexml_load_file($filename);
 						?>
@@ -46,7 +46,7 @@
 							<div class="row">
 								<div class="col-2"></div>
 								<div class="col-8 text-left fadeIn animated">
-									<img src="<?php echo $member->imglarge; ?>" style="float: right; width: 50%; ">
+									<img src="<?php echo $member->imglarge; ?>" class="rounded" style="margin-left: 1em; float: right; width: 40%; ">
 									<span class="text-muted"><?php echo $member->position; ?></span>
 									<h4><?php echo $member->name; ?></h4>
 									<p><?php echo $member->article; ?></p>

@@ -1,0 +1,16 @@
+<?xml version="1.0" encoding="utf-8"?>
+<member>
+	<position></position>
+	<name>楡井 雄志郎</name>
+	<img>/member/img/nirei.jpg</img>
+	<imghover>/member/img/nirei.jpg</imghover>
+	<imglarge>/member/img/nirei-l.jpg</imglarge>
+	<!--<comment></comment>-->
+	<article>
+		慶應大学在学。
+		慶應大学主催のビジネスコンテスト(KBC)の運営メンバー。
+		KBCの中のアクセラレータープログラムにて代表の池田と出会い、同プログラム終了後2017年12月にWaterFowlに参画。
+		ReactNativeにてアプリサイドの開発業務を中心に学生インターンやビジネスサイドのメンバーへのプログラミングの教育も担当。
+	</article>
+	<!--<item><name></name><value></value></item>-->
+</member>

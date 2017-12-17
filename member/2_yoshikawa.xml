@@ -1,0 +1,16 @@
+<?xml version="1.0" encoding="utf-8"?>
+<member>
+	<position></position>
+	<name>吉川 明成</name>
+	<img>/member/img/yoshikawa.jpg</img>
+	<imghover>/member/img/yoshikawa.jpg</imghover>
+	<imglarge>/member/img/yoshikawa-l.jpg</imglarge>
+	<!--<comment></comment>-->
+	<article>
+		慶應義塾大学商学部在学。
+		ポリテック系ベンチャーにて広報業務に従事。
+		中学ではテニスを、高校ではバドミントンを経験し、ラケットスポーツに対するイノベーションの可能性を感じ2017年12月にWaterFowlに参画。
+		ReactNativeにてアプリサイドの開発業務を中心に広報活動やスポーツアナリスト業務に幅広く従事。
+	</article>
+	<!--<item><name></name><value></value></item>-->
+</member>

@@ -1,0 +1,15 @@
+<?xml version="1.0" encoding="utf-8"?>
+<member>
+	<position></position>
+	<name>松尾 拓海</name>
+	<img>/member/img/matsuo.jpg</img>
+	<imghover>/member/img/matsuo.jpg</imghover>
+	<imglarge>/member/img/matsuo-l.jpg</imglarge>
+	<!--<comment></comment>-->
+	<article>
+		慶應大学理工学部在学。ニューヨーク出身
+		かつて経験したラケットスポーツの分析を簡易的かつ正確に行うというコンセプトに将来のスポーツ分析に可能性を感じ、WaterFowlに参画。
+		Ruby on Railsにてサーバーサイドの開発業務に着手。
+	</article>
+	<!--<item><name></name><value></value></item>-->
+</member>

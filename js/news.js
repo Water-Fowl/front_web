@@ -8,7 +8,7 @@ $(function(){
 
 		var target = this;
 		$.get(filename, {}, function(res, stat, xhr){
-			var img_html = '<img src="'+$(res).find('header').html()+'" style="width: 80%; ">';
+			var img_html = '<img src="'+$(res).find('header').html()+'" class="rounded" style="width: 80%; ">';
 			$(target).html(`
 				<a href="/news.php?`+$.param({ref: filename.replace('news/', '').replace('.xml', '')})+`" style="text-decoration: none; color: inherit; "><div class="card-body text-left">
 				<div style="height: 25em; overflow: hidden; ">
@@ -24,8 +24,8 @@ $(function(){
 				</div></a>
 			`);
 		}, 'xml');
+		$(this).attr('class', 'news-widget card bg-light fadeIn animated');
 	});
-	$('.news-widget').attr('class', 'news-widget card bg-light');
 
 	/*$('.member-widget').each(function(){
 		var filename = $(this).attr('ref');
