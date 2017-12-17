@@ -28,7 +28,7 @@
 					foreach($members as $filename){
 						$member = simplexml_load_file($filename);
 						?>
-						<td><a href="?<?php echo http_build_query(['member' => basename($filename, '.xml')]); ?>#members" class="a-disabled"><div style="margin: 0 0.5em; ">
+						<td><a href="?<?php echo http_build_query(array('member' => basename($filename, '.xml'))); ?>#members" class="a-disabled"><div style="margin: 0 0.5em; ">
 							<img src="<?php echo $member->img; ?>" class="avatar" style="height: 5em;" onmouseover="$(this).attr('src', '<?php echo $member->imghover; ?>'); " onmouseout="$(this).attr('src', '<?php echo $member->img; ?>'); "><br>
 							<span><?php echo $member->name; ?></span>
 						</div></a></td>
