@@ -13,13 +13,9 @@
 	</head>
 	<body>
 		<?php bodyHeader(); ?>
-			<div id="news" class="header-bottom">
-				<h3>News</h3>
-				<?php newsList(3, 0, true); ?>
-			</div>
 		<article>
 		<section id="members" class="text-white">
-			<div class="section-padding bg-darkskelton">
+			<div class="section-padding">
 				<h3>Members</h3>
 				<table class="margin-center"><tr>
 				<?php
@@ -28,7 +24,7 @@
 					foreach($members as $filename){
 						$member = simplexml_load_file($filename);
 						?>
-						<td><a href="?<?php echo http_build_query(array('member' => basename($filename, '.xml'))); ?>#members" class="a-disabled"><div style="margin: 0 0.5em; ">
+						<td><a href="<?php echo basename($filename); ?>" class="member-button a-disabled"><div style="margin: 0 0.5em; ">
 							<img src="<?php echo $member->img; ?>" class="avatar" style="height: 5em;" onmouseover="$(this).attr('src', '<?php echo $member->imghover; ?>'); " onmouseout="$(this).attr('src', '<?php echo $member->img; ?>'); "><br>
 							<span><?php echo $member->name; ?></span>
 						</div></a></td>
@@ -37,7 +33,7 @@
 				?>
 				</tr></table>
 				<?php
-					if (isset($_GET['member'])){
+					/*if (isset($_GET['member'])){
 						$filename = $_SERVER['DOCUMENT_ROOT'].'/member/'.basename($_GET['member']).'.xml';	// basename()->他ディレクトリを参照させない
 						if (file_exists($filename)){
 							$member = simplexml_load_file($filename); ?>
@@ -61,13 +57,43 @@
 								<div class="col-2"></div>
 							</div>
 						<?php }
-					}
+					}*/
 				?>
-				<!--<table class="margin-center"><tr>
-					<td><div class="member-widget" ref="/member/mii.xml"></div></td>
-					<td><div class="member-widget" ref="/member/mii2.xml"></div></td>
-					<td><a href="news.php"><button type="button" class="btn btn-success" style="border-radius: 50%; font-weight: bold; ">&gt</button></a></td>
-				</tr></table>-->
+				<br>
+				<br>
+				<div class="row">
+					<div class="col-2"></div>
+					<div id="member-detail"></div>
+					<div class="col-2"></div>
+				</div>
+				<script>
+					$(function(){
+						$('.member-button').click(function(e){
+							filename = '/member/'+$(this).attr('href');
+							$.get(filename, {}, function(res, stat, xhr){
+								item_html = '';
+								$(res).find('item').each(function(){
+									item_html += $(this).find('name').html()+': '+$(this).find('value').html()+'<br>';
+								});
+
+								$('#member-detail').html(`
+									<img src="`+$(res).find('imglarge').html()+`" class="rounded" style="margin-left: 2em; float: right; width: 40%; ">
+									<span class="text-muted">`+$(res).find('position').html()+`</span>
+									<h4>`+$(res).find('name').html()+`</h4>
+									<p style="position: relative; left: 1em; ">`+$(res).find('article').html()+`</p>
+									<span class="text-muted">`+item_html+`</span>
+								`);
+								$('#member-detail').attr('class', 'col-8 text-left animated fadeIn');
+							}, 'xml');
+								$('#member-detail').attr('class', 'col-8 text-left');
+							e.preventDefault();
+						});
+					});
+				</script>
+			</div>
+			<div class="section-padding" style="padding-top: 0; ">
+				<h3 id="news">News</h3>
+				<?php newsList(3, 0, true); ?>
 			</div>
 		</section>
 		<section id="service" class="text-white" style="background-image: url(service.jpg); ">

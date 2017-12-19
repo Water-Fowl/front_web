@@ -23,11 +23,17 @@
 		<link rel="stylesheet" href="https://bootswatch.com/4/darkly/bootstrap.min.css">
 		<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/animate.css/3.5.2/animate.min.css">
 		<link rel="stylesheet" href="/css/style.css">
+
+		<script src="https://code.jquery.com/jquery-3.2.1.min.js" integrity="sha256-hwg4gsxgFZhOsEEamdOYGBf13FyQuiTwlAQgxVSNgt4=" crossorigin="anonymous"></script>
+		<script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.12.3/umd/popper.min.js" integrity="sha384-vFJXuSJphROIrBnz7yo7oB41mKfc8JzQZiCq4NCceLEaO4IHwicKwpJf9c9IpFgh" crossorigin="anonymous"></script>
+		<script src="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0-beta.2/js/bootstrap.min.js" integrity="sha384-alpBpkh1PFOepccYVYDB4do5UnbKysX5WZXm3XxPqe5iKTfUKjNkCk9SaVuEZflJ" crossorigin="anonymous"></script>
+		<script defer src="https://use.fontawesome.com/releases/v5.0.1/js/all.js"></script>
+		<script src="/js/news.js"></script>
 	<?php }
 
 	function bodyHeader(){ ?>
 		<div class="wrapper">
-		<nav class="navbar navbar-expand-lg navbar-dark" style="position: fixed; width: 100%; z-index: 1; ">
+		<nav class="navbar navbar-expand-lg navbar-dark" style="position: fixed; width: 100%; z-index: 2; ">
 		<div class="container-fluid">
 			<div class="navbar-header">
 				<a class="navbar-brand" href="/"><img src="waterfowl.png" alt="Water Fowl" style="height: 1em; background-color:"></a>
@@ -62,10 +68,6 @@
 		<footer class="footer bg-secondary text-center">
 				<span class="text-muted">©︎WaterFowl Inc.</span>
 		</footer>
-		<script src="https://code.jquery.com/jquery-3.2.1.min.js" integrity="sha256-hwg4gsxgFZhOsEEamdOYGBf13FyQuiTwlAQgxVSNgt4=" crossorigin="anonymous"></script>
-		<script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.12.3/umd/popper.min.js" integrity="sha384-vFJXuSJphROIrBnz7yo7oB41mKfc8JzQZiCq4NCceLEaO4IHwicKwpJf9c9IpFgh" crossorigin="anonymous"></script>
-		<script src="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0-beta.2/js/bootstrap.min.js" integrity="sha384-alpBpkh1PFOepccYVYDB4do5UnbKysX5WZXm3XxPqe5iKTfUKjNkCk9SaVuEZflJ" crossorigin="anonymous"></script>
-		<script src="/js/news.js"></script>
 		</div>
 	<?php }
 ?>

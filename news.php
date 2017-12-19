@@ -22,20 +22,26 @@
 					$filename = 'news/'.basename($_GET['ref']).'.xml';	/* basename()によって、他ディレクトリ以外を参照させない */
 					if (file_exists($filename)){
 					$news = simplexml_load_file($filename);
+					
+					$keyword_html = '';
+					foreach($news->keyword as $keyword){
+						$keyword_html .= $keyword.' ';
+					}
 				?>
 						<div class="card text-left">
 							<div class="card-header">
-								<ul class="share-buttons" style="float: right; ">
-									<li><a href="https://www.facebook.com/sharer/sharer.php?u=http%3A%2F%2Fwater-fowl.co.jp&t=" title="Share on Facebook" target="_blank" onclick="window.open('https://www.facebook.com/sharer/sharer.php?u=' + encodeURIComponent(document.URL) + '&t=' + encodeURIComponent(document.URL)); return false;"><img alt="Share on Facebook" src="/img/flat_web_icon_set/Facebook.png" /></a></li>
-									<li><a href="https://twitter.com/intent/tweet?source=http%3A%2F%2Fwater-fowl.co.jp&text=:%20http%3A%2F%2Fwater-fowl.co.jp" target="_blank" title="Tweet" onclick="window.open('https://twitter.com/intent/tweet?text=' + encodeURIComponent(document.title) + ':%20'  + encodeURIComponent(document.URL)); return false;"><img alt="Tweet" src="/img/flat_web_icon_set/Twitter.png" /></a></li>
-									<li><a href="https://plus.google.com/share?url=http%3A%2F%2Fwater-fowl.co.jp" target="_blank" title="Share on Google+" onclick="window.open('https://plus.google.com/share?url=' + encodeURIComponent(document.URL)); return false;"><img alt="Share on Google+" src="/img/flat_web_icon_set/Google+.png" /></a></li>
+								<ul class="soc" style="float: right; ">
+									<li><a class="soc-facebook" href="https://www.facebook.com/sharer/sharer.php?u=http%3A%2F%2Fwater-fowl.co.jp&t=" title="Share on Facebook" target="_blank" onclick="window.open('https://www.facebook.com/sharer/sharer.php?u=' + encodeURIComponent(document.URL) + '&t=' + encodeURIComponent(document.URL)); return false;"><img alt="Share on Facebook" src="/img/flat_web_icon_set/Facebook.png" /></a></li>
+									<li><a class="soc-twitter" href="https://twitter.com/intent/tweet?source=http%3A%2F%2Fwater-fowl.co.jp&text=:%20http%3A%2F%2Fwater-fowl.co.jp" target="_blank" title="Tweet" onclick="window.open('https://twitter.com/intent/tweet?text=' + encodeURIComponent(document.title) + ':%20'  + encodeURIComponent(document.URL)); return false;"><img alt="Tweet" src="/img/flat_web_icon_set/Twitter.png" /></a></li>
+									<li><a class="soc-googleplus soc-icon-last" href="https://plus.google.com/share?url=http%3A%2F%2Fwater-fowl.co.jp" target="_blank" title="Share on Google+" onclick="window.open('https://plus.google.com/share?url=' + encodeURIComponent(document.URL)); return false;"><img alt="Share on Google+" src="/img/flat_web_icon_set/Google+.png" /></a></li>
 								</ul>
-								<span class="text-muted"><?php echo date('Y M. d', filectime($filename)); ?></span><br>
+								<span class="text-muted"><?php echo $news->date; ?></span>　
+								<span class="text-muted"><i class="fas fa-tag"></i><?php echo $keyword_html; ?></span><br>
+								<div style="clear: both; "></div>
 								<h3 class="card-title" style="display: inline; "><?php echo $news->title; ?></h3>
 							</div>
 							<div class="card-body">
-								<?php if (isset($news->header)) echo '<img src="'.$news->header.'" class="rounded" style="width: 25%; float: right; ">'; ?>
-								<p class=""><?php echo nl2br($news->article); ?></p>
+								<div><?php echo nl2br($news->article); ?></div>
 							</div>
 						</div>
 				<?php
