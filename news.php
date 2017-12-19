@@ -41,7 +41,7 @@
 								<h3 class="card-title" style="display: inline; "><?php echo $news->title; ?></h3>
 							</div>
 							<div class="card-body">
-								<div><?php echo nl2br($news->article); ?></div>
+								<div style="font-size: 0.9375rem; "><?php echo nl2br($news->article); ?></div>
 							</div>
 						</div>
 				<?php
