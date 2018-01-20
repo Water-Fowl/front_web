@@ -19,7 +19,7 @@
 		return $isEnd;
 	}
 
-	function head(){ ?>
+	function head($temp){ ?>
 		<link rel="stylesheet" href="https://bootswatch.com/4/darkly/bootstrap.min.css">
 		<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/animate.css/3.5.2/animate.min.css">
 		<link rel="stylesheet" href="/css/style.css">
@@ -29,6 +29,16 @@
 		<script src="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0-beta.2/js/bootstrap.min.js" integrity="sha384-alpBpkh1PFOepccYVYDB4do5UnbKysX5WZXm3XxPqe5iKTfUKjNkCk9SaVuEZflJ" crossorigin="anonymous"></script>
 		<script defer src="https://use.fontawesome.com/releases/v5.0.1/js/all.js"></script>
 		<script src="/js/news.js"></script>
+
+		<?php if (isset($temp['keywords'])){ ?>
+			<meta name=”keywords” content=”<?php echo $temp['keywords']; ?>”>
+		<?php } ?>
+		<?php if (isset($temp['description'])){ ?>
+			<meta name=”description” content=”<?php echo $temp['description']; ?>”>
+		<?php } ?>
+
+		<?php if (!isset($temp['title'])) die('titleが指定されていません。'); ?>
+		<title><?php echo $temp['title']; ?> ︎| WaterFowl Inc. </title>
 	<?php }
 
 	function bodyHeader(){ ?>

@@ -1,10 +1,27 @@
 <?php
 	include($_SERVER['DOCUMENT_ROOT'].'/template.php');
+
+	if (isset($_GET['i'])) $page_i = (int)$_GET['i'];
+	else $page_i = 0;
+
+	$filename = 'news/'.basename($_GET['ref']).'.xml';	/* basename()によって、他ディレクトリ以外を参照させない */
+	$head_temp = [];
+	if (file_exists($filename)){
+		$news = simplexml_load_file($filename);
+		$head_temp['title'] = $news->title;
+
+		$head_temp['keywords'] = '';
+		foreach($news->keyword as $keyword){
+			$head_temp['keywords'] .= $keyword.',';
+		}
+	}else{
+		$head_temp['title'] = 'News';
+	}
 ?>
 <!doctype html>
 <html lang="ja">
 	<head>
-		<?php head(); ?>
+		<?php head($head_temp); ?>
 	</head>
 	<body>
 		<?php bodyHeader(); ?>
@@ -16,17 +33,11 @@
 					<div class="col-2"></div>
 					<div class="col-8">
 				<?php
-					if (isset($_GET['i'])) $page_i = (int)$_GET['i'];
-					else $page_i = 0;
-
-					$filename = 'news/'.basename($_GET['ref']).'.xml';	/* basename()によって、他ディレクトリ以外を参照させない */
 					if (file_exists($filename)){
-					$news = simplexml_load_file($filename);
-					
-					$keyword_html = '';
-					foreach($news->keyword as $keyword){
-						$keyword_html .= $keyword.' ';
-					}
+						$keyword_html = '';
+						foreach($news->keyword as $keyword){
+							$keyword_html .= $keyword.' ';
+						}
 				?>
 						<div class="card text-left">
 							<div class="card-header">
