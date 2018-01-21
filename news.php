@@ -1,4 +1,11 @@
 <?php
+	/* GET パラメータ
+		・i: Newsリスト表示のページめくり
+		・ref: 表示するNewsファイル
+
+		refがある->Newsの詳細表示
+		refがない->Newsリスト表示
+	*/
 	include($_SERVER['DOCUMENT_ROOT'].'/template.php');
 
 	if (isset($_GET['i'])) $page_i = (int)$_GET['i'];
@@ -25,8 +32,8 @@
 	</head>
 	<body>
 		<?php bodyHeader(); ?>
-		<article>
-		<section class="text-white">
+		<article class="bg-light">
+		<section class="">
 			<div class="section-padding">
 				<h3 id="news">News</h3>
 				<div class="row">

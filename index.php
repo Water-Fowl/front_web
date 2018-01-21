@@ -17,12 +17,12 @@
 	</head>
 	<body>
 		<?php bodyHeader(); ?>
-		<article>
-		<section id="members" class="text-white">
+		<article class="bg-light">
+		<section id="members" class="">
 			<div class="section-padding">
 				<h3>Members</h3>
 				<table class="margin-center"><tr>
-				<?php
+				<?php	/* メンバーのリストを出力する */
 					$members = glob($_SERVER['DOCUMENT_ROOT'].'/member/*.xml');
 					//rsort($members);
 					foreach($members as $filename){
@@ -36,41 +36,14 @@
 					}
 				?>
 				</tr></table>
-				<?php
-					/*if (isset($_GET['member'])){
-						$filename = $_SERVER['DOCUMENT_ROOT'].'/member/'.basename($_GET['member']).'.xml';	// basename()->他ディレクトリを参照させない
-						if (file_exists($filename)){
-							$member = simplexml_load_file($filename); ?>
-							<br>
-							<br>
-							<div class="row">
-								<div class="col-2"></div>
-								<div class="col-8 text-left fadeIn animated">
-									<img src="<?php echo $member->imglarge; ?>" class="rounded" style="margin-left: 1em; float: right; width: 40%; ">
-									<span class="text-muted"><?php echo $member->position; ?></span>
-									<h4><?php echo $member->name; ?></h4>
-									<p><?php echo $member->article; ?></p>
-									<?php
-										foreach($member->item as $item){
-											?>
-											<span class="text-muted"><?php echo $item->name; ?>: <?php echo $item->value; ?></span><br>
-											<?php
-										}
-									?>
-								</div>
-								<div class="col-2"></div>
-							</div>
-						<?php }
-					}*/
-				?>
 				<br>
 				<br>
 				<div class="row">
 					<div class="col-2"></div>
-					<div id="member-detail"></div>
+					<div id="member-detail"></div>	/* メンバーの詳細情報 */
 					<div class="col-2"></div>
 				</div>
-				<script>
+				<script>	/* Memberの詳細情報切り替えプログラム */
 					$(function(){
 						$('.member-button').click(function(e){
 							filename = '/member/'+$(this).attr('href');
@@ -108,7 +81,7 @@
 				<img src="spolyzer.png" alt="Spolyzer" width="128px">
 			</div>
 		</section>
-		<section id="about" class="text-white bg-light">
+		<section id="about" class="bg-light">
 			<div class="section-padding">
 				<h3>About</h3>
 				<div class="row">
@@ -132,7 +105,7 @@
 			</div>
 		</section>
 		<section id="contact">
-			<div class="text-white section-padding">
+			<div class="section-padding">
 				<h3>Contact</h3>
 				<div class="row">
 					<div class="col-4"></div>

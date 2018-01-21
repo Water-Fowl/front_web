@@ -28,12 +28,13 @@
 				/*height: 150vh;*/
 			}
 			.header-darkskelton{
-				background-color: rgba(0, 0, 0, 0.6);
+				background-color: rgba(255, 255, 255, 0.0);
 				height: 50vh;
 				padding-top: 30vh;
 			}
 			.header-gradient{
-				background: linear-gradient(rgba(0, 0, 0, 0.6), rgba(0, 0, 0, 1.0));
+				/*background: linear-gradient(rgba(0, 0, 0, 0.6), rgba(0, 0, 0, 1.0));*/
+				background: linear-gradient(rgba(255, 255, 255, 0.0), rgba(255, 255, 255, 1.0));
 				height: 50vh;
 			}
 			.header-bottom{
@@ -44,7 +45,6 @@
 				/*height: 33.33%;*/
 			}
 			section{
-				background-color: black;
 				text-align: center;
 			}
 			.bg-darkskelton{
@@ -71,7 +71,7 @@
 				border: 1px solid #375a7f;
 			}
 			.news-widget:hover .news-widget-more{
-				color: white !important;
+				/*color: white !important;*/
 			}
 			.news-article img{
 				display: none;

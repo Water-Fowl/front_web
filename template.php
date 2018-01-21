@@ -1,5 +1,5 @@
 <?php
-	function newsList($n, $i, $isMore = false){
+	function newsList($n, $i, $isMore = false){	/* Newsリストを出力する */
 		?><table class="margin-center"><tr><?php
 			$j = 0;
 			$isEnd = true;
@@ -19,8 +19,10 @@
 		return $isEnd;
 	}
 
-	function head($temp){ ?>
-		<link rel="stylesheet" href="https://bootswatch.com/4/darkly/bootstrap.min.css">
+	function head($temp){ /* 共通のheadを出力する
+                        使い方: head(['title' => 'サイトタイトル', 'description' => 'サイト説明文(任意)', 'keywords' => 'キーワード(任意)']);
+                */?> 
+		<link rel="stylesheet" href="https://bootswatch.com/4/cosmo/bootstrap.min.css">
 		<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/animate.css/3.5.2/animate.min.css">
 		<link rel="stylesheet" href="/css/style.css">
 
@@ -41,7 +43,7 @@
 		<title><?php echo $temp['title']; ?> ︎| WaterFowl Inc. </title>
 	<?php }
 
-	function bodyHeader(){ ?>
+	function bodyHeader(){ /* 共通のbody先頭要素（ヘッダー）を出力する */?>
 		<div class="wrapper">
 		<nav class="navbar navbar-expand-lg navbar-dark" style="position: fixed; width: 100%; z-index: 2; ">
 		<div class="container-fluid">
@@ -65,8 +67,8 @@
 		<header>
 			<div class="header-darkskelton">
 				<div class="fadeIn animated" style="animation-delay: 0.25s;">
-					<h1>Maximize Human Possibility</h1>
-					<h2>-人の可能性を最大化する-</h2>
+					<h1 class="">Maximize Human Possibility</h1>
+					<h2 class="">-人の可能性を最大化する-</h2>
 				</div>
 			</div>
 			<div class="header-gradient">
@@ -74,7 +76,7 @@
 		</header>
 	<?php }
 
-	function bodyFooter(){ ?>
+	function bodyFooter(){ /* 共通のbody末尾要素（フッター）を出力する */?>
 		<footer class="footer bg-secondary text-center">
 				<span class="text-muted">©︎WaterFowl Inc.</span>
 		</footer>
