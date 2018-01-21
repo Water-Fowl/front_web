@@ -40,7 +40,7 @@
 				<br>
 				<div class="row">
 					<div class="col-2"></div>
-					<div id="member-detail"></div>	/* メンバーの詳細情報 */
+					<div id="member-detail"></div>	<!-- メンバーの詳細情報 -->
 					<div class="col-2"></div>
 				</div>
 				<script>	/* Memberの詳細情報切り替えプログラム */
