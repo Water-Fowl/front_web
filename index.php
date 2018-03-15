@@ -90,9 +90,9 @@
 						<table class="table table-striped">
 							<tr><th>社名</th><td>株式会社WaterFowl</td></tr>
 							<tr><th>設立</th><td>2017年7月28日</td></tr>
-								<tr><th>所在地</th><td>〒116-0013 東京都荒川区西日暮里1-16-15</td></tr>
+								<tr><th>所在地</th><td>〒150-0031 東京都渋谷区桜ヶ丘4-17 Portal Apartment&Art Point 703</td></tr>
 							<tr><th>代表者</th><td>池田吉来</td></tr>
-							<tr><th>資本金</th><td>200万円</td></tr>
+							<tr><th>資本金</th><td>27,000,000円（資本準備金含む）</td></tr>
 							<tr><th style="border-bottom: none; ">事業内容</th><td style="border-bottom: none; ">『Spolyzer』<br>
 								スポーツ分析セミナー<br>
 								アスリートキャリアコンサルティング<br>
@@ -142,4 +142,3 @@
 		<?php bodyFooter(); ?>
 	</body>
 </html>
-
