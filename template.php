@@ -21,7 +21,7 @@
 
 	function head($temp){ /* 共通のheadを出力する
                         使い方: head(['title' => 'サイトタイトル', 'description' => 'サイト説明文(任意)', 'keywords' => 'キーワード(任意)']);
-                */?> 
+                */?>
 		<link rel="stylesheet" href="https://bootswatch.com/4/cosmo/bootstrap.min.css">
 		<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/animate.css/3.5.2/animate.min.css">
 		<link rel="stylesheet" href="/css/style.css">
@@ -33,10 +33,10 @@
 		<script src="/js/news.js"></script>
 
 		<?php if (isset($temp['keywords'])){ ?>
-			<meta name=”keywords” content=”<?php echo $temp['keywords']; ?>”>
+			<meta name="keywords" content="<?php echo $temp['keywords']; ?>">
 		<?php } ?>
 		<?php if (isset($temp['description'])){ ?>
-			<meta name=”description” content=”<?php echo $temp['description']; ?>”>
+			<meta name="description" content="<?php echo $temp['description']; ?>">
 		<?php } ?>
 
 		<?php if (!isset($temp['title'])) die('titleが指定されていません。'); ?>
