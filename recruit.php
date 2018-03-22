@@ -4,9 +4,7 @@
 <!doctype html>
 <html lang="ja">
 	<head>
-		<?php head([
-			'title' => 'Recruit',
-		]); ?>
+		<?php head(); ?>
 	</head>
 	<body>
 		<?php bodyHeader(); ?>

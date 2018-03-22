@@ -12,17 +12,8 @@
 	else $page_i = 0;
 
 	$filename = 'news/'.basename($_GET['ref']).'.xml';	/* basename()によって、他ディレクトリ以外を参照させない */
-	$head_temp = [];
 	if (file_exists($filename)){
 		$news = simplexml_load_file($filename);
-		$head_temp['title'] = $news->title;
-
-		$head_temp['keywords'] = '';
-		foreach($news->keyword as $keyword){
-			$head_temp['keywords'] .= $keyword.',';
-		}
-	}else{
-		$head_temp['title'] = 'News';
 	}
 ?>
 <!doctype html>

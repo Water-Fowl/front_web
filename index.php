@@ -4,11 +4,7 @@
 <!doctype html>
 <html lang="ja">
 	<head>
-		<?php head([
-			'title' => '人の可能性を最大化する',
-			'description' => '株式会社WaterFowlではスポーツ分析サービスSpolyzerを開発・運営しています。',	/* 引用: Wantedly */
-			/*'keywords' => 'SEO対策の検索キーワードを設定できます',*/
-		]); ?>
+		<?php head(); ?>
 		<style>
 			h3{
 				font-weight: bold;

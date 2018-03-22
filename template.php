@@ -39,7 +39,6 @@
 			<meta name="description" content="<?php echo $temp['description']; ?>">
 		<?php } ?>
 
-		<?php if (!isset($temp['title'])) die('titleが指定されていません。'); ?>
 		<title><?php echo $temp['title']; ?> ︎| WaterFowl Inc. </title>
 	<?php }
 
